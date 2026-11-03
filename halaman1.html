@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Memories</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 50% 20%, #310000 0%, transparent 55%),
+        linear-gradient(145deg, #050505, #130000 55%, #050505);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    padding: 45px 20px;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    background:
+        repeating-conic-gradient(
+            from 0deg at 50% 0%,
+            transparent 0deg 14deg,
+            #ff2424 14.3deg 14.6deg,
+            transparent 15deg 30deg
+        );
+    mask-image: radial-gradient(ellipse at top, black, transparent 75%);
+    z-index: 0;
+}
+
+.ambient-glow {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(200, 0, 0, 0.12);
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-one {
+    top: 10%;
+    left: -180px;
+}
+
+.glow-two {
+    bottom: 5%;
+    right: -180px;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+}
+
+.eyebrow {
+    color: #ff6565;
+    letter-spacing: 5px;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 8vw, 75px);
+    font-weight: 600;
+    color: #fff0f0;
+    text-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #d7a5a5;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+}
+
+.divider {
+    width: 90px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff3030, transparent);
+    margin: 0 auto 35px;
+    box-shadow: 0 0 12px #ff0000;
+}
+
+/* POLAROID */
+
+.memory-wall {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    align-items: center;
+    margin: 0 auto 40px;
+}
+
+.polaroid {
+    background: #f5eeee;
+    padding: 10px 10px 17px;
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(255, 0, 0, 0.13);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: photoAppear 1s ease both;
+}
+
+.polaroid:nth-child(1) {
+    transform: rotate(-5deg);
+    animation-delay: 0.2s;
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(3deg);
+    animation-delay: 0.4s;
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(-3deg);
+    animation-delay: 0.6s;
+}
+
+.polaroid:nth-child(4) {
+    transform: rotate(5deg);
+    animation-delay: 0.8s;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) translateY(-10px) scale(1.04);
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.7),
+        0 0 25px rgba(255, 0, 0, 0.35);
+    z-index: 5;
+}
+
+.polaroid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    background: #260909;
+    border: 1px solid #ddd;
+}
+
+.caption {
+    color: #292020;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+@keyframes photoAppear {
+    from {
+        opacity: 0;
+        translate: 0 25px;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/* SPOTIFY STYLE MUSIC PLAYER */
+
+.music-card {
+    max-width: 540px;
+    margin: 0 auto 35px;
+    padding: 22px;
+    background: linear-gradient(145deg, rgba(43, 9, 19, 0.96), rgba(12, 7, 10, 0.97));
+    border: 1px solid rgba(255, 90, 120, 0.32);
+    border-radius: 22px;
+    text-align: left;
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(190, 0, 45, 0.13);
+    backdrop-filter: blur(12px);
+}
+
+.music-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+
+.music-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #e58a9e;
+    font-weight: 500;
+}
+
+.music-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ff5577;
+    box-shadow: 0 0 12px #ff5577;
+    display: inline-block;
+    margin-right: 7px;
+}
+
+.track-main {
+    display: flex;
+    gap: 17px;
+    align-items: center;
+}
+
+.album-art {
+    width: 112px;
+    height: 112px;
+    flex: 0 0 112px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background: radial-gradient(circle at 35% 30%, #8c263d, #35101d 55%, #10070c);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.album-art img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.track-info {
+    min-width: 0;
+}
+
+.track-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: #fff1f3;
+    line-height: 1.1;
+}
+
+.track-artist {
+    font-size: 12px;
+    color: #c99aa7;
+    margin-top: 7px;
+}
+
+.track-note {
+    font-size: 10px;
+    color: #a97885;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* PROGRESS BAR */
+
+.progress-wrap {
+    margin-top: 21px;
+}
+
+.progress {
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background: #56303b;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #d72d54, #ff8ca5);
+    border-radius: 10px;
+}
+
+.time-row {
+    display: flex;
+    justify-content: space-between;
+    color: #b98c98;
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+/* MUSIC BUTTONS */
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 16px;
+}
+
+.control-btn {
+    border: none;
+    background: transparent;
+    color: #e8bdc8;
+    font-size: 23px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px;
+    transition: 0.2s;
+}
+
+.control-btn:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.play-btn {
+    width: 49px;
+    height: 49px;
+    border: none;
+    border-radius: 50%;
+    background: #fff0f3;
+    color: #260b13;
+    font-size: 19px;
+    cursor: pointer;
+    box-shadow: 0 0 22px rgba(255, 80, 120, 0.28);
+    transition: 0.2s;
+}
+
+.play-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 28px rgba(255, 80, 120, 0.5);
+}
+
+.player-foot {
+    font-size: 10px;
+    color: #a97885;
+    text-align: center;
+    margin-top: 16px;
+    letter-spacing: 0.5px;
+}
+
+.music-card.playing .album-art {
+    animation: albumPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes albumPulse {
+    50% {
+        box-shadow: 0 0 28px rgba(255, 65, 105, 0.42), 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* MESSAGE */
+
+.message-box {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 28px 25px;
+    background: rgba(15, 0, 0, 0.75);
+    border: 1px solid rgba(255, 60, 60, 0.35);
+    border-radius: 18px;
+    box-shadow:
+        0 0 25px rgba(255, 0, 0, 0.12),
+        inset 0 0 25px rgba(120, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
+}
+
+.message-heading {
+    font-family: 'Cormorant Garamond', serif;
+    color: #ff7777;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.typing-text {
+    color: #f5dddd;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 300;
+    overflow-wrap: break-word;
+}
+
+.typing-text p {
+    margin-bottom: 13px;
+}
+
+.typing-text p:last-child {
+    color: #ff8c8c;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* WHATSAPP */
+
+#whatsapp-button {
+    display: none;
+    margin: 25px auto 0;
+    padding: 13px 28px;
+    background: linear-gradient(135deg, #a90000, #ff3030);
+    color: white;
+    border: 1px solid rgba(255, 150, 150, 0.5);
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.35);
+    transition: 0.3s;
+}
+
+#whatsapp-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.65);
+}
+
+.footer {
+    color: #986b6b;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 35px;
+}
+
+.spider-icon {
+    color: #ff3030;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px red;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    body {
+        padding: 35px 15px;
+    }
+
+    .memory-wall {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 18px;
+        max-width: 450px;
+    }
+
+    .polaroid {
+        padding: 8px 8px 14px;
+    }
+
+    .caption {
+        font-size: 15px;
+    }
+
+    .message-box {
+        padding: 23px 17px;
+    }
+
+    .typing-text {
+        font-size: 13px;
+    }
+
+    .music-card {
+        padding: 18px;
+    }
+
+    .album-art {
+        width: 94px;
+        height: 94px;
+        flex-basis: 94px;
+    }
+
+    .track-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 350px) {
+    .memory-wall {
+        gap: 18px 12px;
+    }
+
+    .caption {
+        font-size: 13px;
+    }
+
+    .track-main {
+        gap: 12px;
+    }
+
+    .album-art {
+        width: 80px;
+        height: 80px;
+        flex-basis: 80px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient-glow glow-one"></div>
+<div class="ambient-glow glow-two"></div>
+
+<main class="container">
+
+    <div class="spider-icon">🕷</div>
+
+    <p class="eyebrow">A little collection of memories</p>
+
+    <h1>Our Little Memories</h1>
+
+    <p class="subtitle">
+        Some moments deserve to stay forever.
+    </p>
+
+    <div class="divider"></div>
+
+    <!-- POLAROID PHOTOS -->
+
+    <section class="memory-wall">
+
+        <div class="polaroid">
+            <img src="1.jpeg" alt="Kenangan pertama">
+            <div class="caption">A lovely moment</div>
+        </div>
+
+        <div class="polaroid">
+            <img src="2.jpeg" alt="Kenangan kedua">
+            <div class="caption">Little happiness</div>
+        </div>
+
+        <div class="polaroid">
+            <img src="3.jpeg" alt="Kenangan ketiga">
+            <div class="caption">One of my favorites</div>
+        </div>
+
+        <div class="polaroid">
+            <img src="4.jpeg" alt="Kenangan keempat">
+            <div class="caption">A memory to keep</div>
+        </div>
+
+    </section>
+
+    <!-- SPOTIFY STYLE MUSIC PLAYER -->
+
+    <section class="music-card" id="music-card">
+
+        <div class="music-top">
+            <span class="music-label">
+                <span class="music-dot"></span>
+                YOUR SPECIAL PLAYLIST
+            </span>
+            <span style="font-size:17px">♥</span>
+        </div>
+
+        <div class="track-main">
+
+            <div class="album-art">
+                <img src="cover.jpeg" alt="Cover All Too Well">
+            </div>
+
+            <div class="track-info">
+                <h2 class="track-title">All Too Well</h2>
+                <p class="track-artist">Taylor Swift</p>
+                <p class="track-note">
+                    A little soundtrack of our memories
+                </p>
+            </div>
+
+        </div>
+
+        <div class="progress-wrap">
+
+            <div class="progress" id="progress">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <div class="time-row">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+
+        </div>
+
+        <div class="controls">
+
+            <button class="control-btn" id="restart-btn" aria-label="Putar dari awal">
+                ↺
+            </button>
+
+            <button class="play-btn" id="play-btn" aria-label="Putar lagu">
+                ▶
+            </button>
+
+            <button class="control-btn" id="repeat-btn" aria-label="Ulangi lagu">
+                ⟲
+            </button>
+
+        </div>
+
+        <p class="player-foot" id="player-status">
+            Tekan play untuk memutar lagu
+        </p>
+
+    </section>
+
+    <!-- MESSAGE -->
+
+    <section class="message-box">
+
+        <h2 class="message-heading">
+            A Message For You ♥
+        </h2>
+
+        <div class="typing-text" id="typing"></div>
+
+        <button
+            id="whatsapp-button"
+            onclick="window.location.href='https://api.whatsapp.com/send?text=Terimakasih'">
+            Reply to message
+        </button>
+
+    </section>
+
+    <div class="footer">
+        MADE WITH LOVE ♥
+    </div>
+
+</main>
+
+<!-- MUSIC FILE -->
+
+<audio id="background-music" preload="metadata" loop>
+    <source src="alltowelll.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+</audio>
+
+<script>
+
+/* MUSIC PLAYER */
+
+const audio = document.getElementById('background-music');
+const playBtn = document.getElementById('play-btn');
+const restartBtn = document.getElementById('restart-btn');
+const repeatBtn = document.getElementById('repeat-btn');
+const progress = document.getElementById('progress');
+const progressFill = document.getElementById('progress-fill');
+const currentTimeEl = document.getElementById('current-time');
+const durationEl = document.getElementById('duration');
+const playerStatus = document.getElementById('player-status');
+const musicCard = document.getElementById('music-card');
+
+function formatTime(seconds) {
+    if (!Number.isFinite(seconds)) return '0:00';
+
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60)
+        .toString()
+        .padStart(2, '0');
+
+    return `${mins}:${secs}`;
+}
+
+function updatePlayState() {
+
+    const playing = !audio.paused;
+
+    playBtn.textContent = playing ? 'Ⅱ' : '▶';
+
+    playBtn.setAttribute(
+        'aria-label',
+        playing ? 'Jeda lagu' : 'Putar lagu'
+    );
+
+    musicCard.classList.toggle('playing', playing);
+
+    playerStatus.textContent = playing
+        ? 'Now playing · All Too Well'
+        : 'Tekan play untuk memutar lagu';
+}
+
+/* PLAY / PAUSE */
+
+playBtn.addEventListener('click', async () => {
+
+    if (audio.paused) {
+
+        try {
+            await audio.play();
+        } catch (error) {
+            playerStatus.textContent =
+                'Lagu belum bisa diputar. Coba tekan play lagi';
+        }
+
+    } else {
+
+        audio.pause();
+
+    }
+
+    updatePlayState();
+
+});
+
+/* RESTART */
+
+restartBtn.addEventListener('click', () => {
+
+    audio.currentTime = 0;
+
+    audio.play()
+        .then(updatePlayState)
+        .catch(() => {
+            playerStatus.textContent =
+                'Tekan play untuk memutar lagu ♥';
+        });
+
+});
+
+/* REPEAT */
+
+repeatBtn.addEventListener('click', () => {
+
+    audio.loop = !audio.loop;
+
+    repeatBtn.style.color = audio.loop
+        ? '#ff8ca5'
+        : '#e8bdc8';
+
+    playerStatus.textContent = audio.loop
+        ? 'Repeat aktif · lagu akan diputar ulang ♥'
+        : 'Repeat dimatikan';
+
+});
+
+/* DURATION */
+
+audio.addEventListener('loadedmetadata', () => {
+
+    durationEl.textContent = formatTime(audio.duration);
+
+});
+
+/* PROGRESS */
+
+audio.addEventListener('timeupdate', () => {
+
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+
+        progressFill.style.width =
+            `${(audio.currentTime / audio.duration) * 100}%`;
+
+    }
+
+});
+
+/* SEEK SONG */
+
+progress.addEventListener('click', (event) => {
+
+    if (!Number.isFinite(audio.duration) || audio.duration <= 0) {
+        return;
+    }
+
+    const rect = progress.getBoundingClientRect();
+
+    audio.currentTime =
+        ((event.clientX - rect.left) / rect.width) * audio.duration;
+
+});
+
+/* PLAYER EVENTS */
+
+audio.addEventListener('play', updatePlayState);
+audio.addEventListener('pause', updatePlayState);
+audio.addEventListener('ended', updatePlayState);
+
+
+/* TYPING MESSAGE */
+
+const texts = [
+
+    "Selamat ulang tahun kamuu",
+
+    "Semoga di tahun dan bulan ini",
+
+    "Tuhan mewujudkan doa doa mu yang blum terwujud",
+
+    "Dan semoga di tahun ini",
+
+    "Kamu menjadi lebih baik dari sebelumnya dan dilancarkan rezekinya",
+
+    "Untuk kamuu",
+
+    "Happy birthday 🎉"
+
+];
+
+let index = 0;
+
+const typingElement = document.getElementById('typing');
+
+const typingSpeed = 200;
+
+const whatsappButton =
+    document.getElementById('whatsapp-button');
+
+function typeText() {
+
+    if (index < texts.length) {
+
+        const paragraph = document.createElement('p');
+
+        paragraph.textContent = '';
+
+        typingElement.appendChild(paragraph);
+
+        let charIndex = 0;
+
+        function typeChar() {
+
+            if (charIndex < texts[index].length) {
+
+                paragraph.textContent +=
+                    texts[index].charAt(charIndex);
+
+                charIndex++;
+
+                setTimeout(typeChar, typingSpeed);
+
+            } else {
+
+                index++;
+
+                if (index < texts.length) {
+
+                    setTimeout(typeText, 1000);
+
+                } else {
+
+                    whatsappButton.style.display = 'block';
+
+                }
+
+            }
+
+        }
+
+        typeChar();
+
+    }
+
+}
+
+typeText();
+
+</script>
+
+</body>
+</html>
