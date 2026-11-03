@@ -218,7 +218,7 @@
       50% { translate: 0 -9px; }
     }
 
-    /* TIGA KARAKTER KARTUN */
+    /* KARAKTER KARTUN */
     .cartoon-friends {
       position: absolute;
       bottom: 12px;
@@ -440,445 +440,444 @@
         font-size: 1rem;
       }
     }
+
     /* RAPIIKAN TAMPILAN BIRTHDAY */
-.birthday {
-  overflow: hidden;
-  position: fixed;
-}
-
-/* JUDUL */
-.birthday .greeting {
-  position: absolute;
-  top: 13%;
-  left: 8%;
-  margin: 0 !important;
-  font-size: clamp(2rem, 5vw, 4.3rem);
-  z-index: 5;
-}
-
-.birthday .year {
-  display: none;
-}
-
-/* SPIDERMAN */
-.spiderman {
-  position: absolute;
-  right: 2%;
-  bottom: 5%;
-  height: 65vh;
-  max-width: 40%;
-  object-fit: contain;
-  z-index: 3;
-}
-
-/* BALON PERCAKAPAN */
-.spiderman-talk {
-  position: absolute;
-  top: 25%;
-  right: 24%;
-  width: 210px;
-  padding: 12px;
-  z-index: 6;
-  transform: rotate(-2deg);
-}
-
-.spiderman-talk p {
-  font-size: 11px;
-  line-height: 1.4;
-}
-
-/* TOMBOL */
-.birthday .buttons {
-  position: absolute;
-  top: 38%;
-  left: 8%;
-  margin: 0;
-  z-index: 10;
-}
-
-.birthday .btn {
-  font-size: 1.1rem;
-  padding: 12px 25px;
-}
-
-/* KARAKTER KARTUN */
-.cartoon-friends {
-  position: absolute;
-  left: 7%;
-  bottom: 5%;
-  display: flex;
-  gap: 12px;
-  z-index: 8;
-}
-
-.friend img {
-  width: 85px;
-  height: 100px;
-  object-fit: contain;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  .birthday .greeting {
-    top: 10%;
-    left: 5%;
-    font-size: 2rem;
-  }
-
-  .spiderman {
-    height: 43vh;
-    max-width: 65%;
-    right: -5%;
-    bottom: 15%;
-  }
-
-  .spiderman-talk {
-    top: 25%;
-    right: 5%;
-    width: 155px;
-    padding: 9px;
-  }
-
-  .spiderman-talk p {
-    font-size: 9px;
-  }
-
-  .birthday .buttons {
-    top: 45%;
-    left: 5%;
-  }
-
-  .birthday .btn {
-    font-size: .9rem;
-    padding: 9px 14px;
-  }
-
-  .cartoon-friends {
-    left: 5%;
-    bottom: 3%;
-    gap: 5px;
-  }
-
-  .friend img {
-    width: 58px;
-    height: 70px;
-  }
-
-  .friend span {
-    font-size: 7px;
-  }
-}
-/* =================================
-   RESPONSIVE LAPTOP, TABLET DAN HP
-================================= */
-
-/* LAPTOP DAN DESKTOP */
-@media (min-width: 901px) {
-  .birthday .greeting {
-    top: 12%;
-    left: 7%;
-    font-size: 4rem;
-  }
-
-  .birthday .buttons {
-    top: 38%;
-    left: 8%;
-  }
-
-  .spiderman {
-    height: 68vh;
-    right: 2%;
-  }
-
-  .spiderman-talk {
-    top: 24%;
-    right: 25%;
-    width: 220px;
-  }
-
-  .cartoon-friends {
-    left: 7%;
-    bottom: 3%;
-  }
-}
-
-/* TABLET */
-@media (min-width: 601px) and (max-width: 900px) {
-  .birthday .greeting {
-    top: 12%;
-    left: 5%;
-    font-size: 3rem;
-  }
-
-  .birthday .buttons {
-    top: 35%;
-    left: 5%;
-    gap: 10px;
-  }
-
-  .birthday .btn {
-    font-size: 1rem;
-    padding: 10px 18px;
-  }
-
-  .spiderman {
-    height: 58vh;
-    max-width: 48%;
-    right: 0;
-  }
-
-  .spiderman-talk {
-    top: 24%;
-    right: 23%;
-    width: 185px;
-    padding: 12px;
-  }
-
-  .cartoon-friends {
-    left: 4%;
-    bottom: 3%;
-    gap: 8px;
-  }
-
-  .friend img {
-    width: 70px;
-    height: 85px;
-  }
-}
-
-/* HP */
-@media (max-width: 600px) {
-  .front .info {
-    font-size: 2rem;
-  }
-
-  .front .countdown {
-    font-size: 3rem;
-  }
-
-  .front .loader {
-    width: 190px;
-    margin-top: 45px;
-  }
-
-  .birthday {
-    padding: 10px;
-  }
-
-  .birthday .greeting {
-    position: absolute;
-    top: 9%;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    font-size: clamp(1.7rem, 8vw, 2.5rem);
-    margin: 0 !important;
-  }
-
-  /* Spider-Man di bagian kanan bawah */
-  .spiderman {
-    position: absolute;
-    height: 40vh;
-    max-width: 65%;
-    right: -3%;
-    bottom: 16%;
-    opacity: 1;
-  }
-
-  /* Balon percakapan */
-  .spiderman-talk {
-    position: absolute;
-    top: 23%;
-    right: 4%;
-    width: 155px;
-    padding: 9px;
-    border-width: 3px;
-    border-radius: 15px;
-  }
-
-  .comic-title {
-    font-size: 13px;
-  }
-
-  .spiderman-talk p {
-    font-size: 9px;
-    line-height: 1.4;
-    margin: 6px 0;
-  }
-
-  .comic-boom {
-    font-size: 9px;
-    padding: 4px 8px;
-  }
-
-  /* Tombol di sebelah kiri */
-  .birthday .buttons {
-    position: absolute;
-    top: 39%;
-    left: 5%;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    margin: 0;
-  }
-
-  .birthday .btn {
-    font-size: 0.95rem;
-    padding: 9px 18px;
-  }
-
-  /* SpongeBob, Upin, Ipin */
-  .cartoon-friends {
-    position: absolute;
-    left: 50%;
-    bottom: 2%;
-    transform: translateX(-50%);
-    width: 95%;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .friend img {
-    width: clamp(48px, 17vw, 68px);
-    height: clamp(60px, 20vw, 82px);
-  }
-
-  .friend span {
-    font-size: 7px;
-    padding: 3px 6px;
-  }
-
-  .web-decoration {
-    opacity: 0.10;
-  }
-}
-
-/* HP KECIL */
-@media (max-width: 380px) {
-  .birthday .greeting {
-    font-size: 1.6rem;
-  }
-
-  .spiderman {
-    height: 35vh;
-    right: -5%;
-  }
-
-  .spiderman-talk {
-    width: 140px;
-    right: 3%;
-    top: 22%;
-  }
-
-  .birthday .buttons {
-    top: 40%;
-    left: 4%;
-  }
-
-  .birthday .btn {
-    font-size: 0.85rem;
-    padding: 8px 12px;
-  }
-
-  .cartoon-friends {
-    gap: 4px;
-  }
-
-  .friend img {
-    width: 48px;
-    height: 60px;
-  }
-
-  .friend span {
-    font-size: 6px;
-  }
-}
-
-/* HP LANDSCAPE */
-@media (max-height: 500px) and (orientation: landscape) {
-  .birthday .greeting {
-    top: 5%;
-    left: 5%;
-    font-size: 2rem;
-  }
-
-  .spiderman {
-    height: 70vh;
-    right: 2%;
-  }
-
-  .spiderman-talk {
-    top: 20%;
-    right: 25%;
-    width: 170px;
-  }
-
-  .birthday .buttons {
-    top: 48%;
-    left: 5%;
-  }
-
-  .cartoon-friends {
-    bottom: 1%;
-    left: 5%;
-  }
-
-  .friend img {
-    width: 45px;
-    height: 50px;
-  }
-}
-/* FOTO POLAROID LEBIH KECIL DI HP */
-@media (max-width: 700px) {
-  .memory-wall {
-    width: 100%;
-    max-width: 310px;
-    margin: 0 auto;
-    padding: 8px;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    justify-items: center;
-  }
-
-  .polaroid {
-    width: 100%;
-    max-width: 135px;
-    padding: 5px 5px 8px;
-    margin: 0;
-  }
-
-  .polaroid img {
-    width: 100%;
-    height: 105px;
-    object-fit: cover;
-  }
-
-  .polaroid p {
-    font-size: 9px;
-    margin-top: 5px;
-  }
-}
-
-/* HP KECIL */
-@media (max-width: 380px) {
-  .memory-wall {
-    max-width: 270px;
-    gap: 7px;
-  }
-
-  .polaroid {
-    max-width: 118px;
-  }
-
-  .polaroid img {
-    height: 90px;
-  }
-
-  .polaroid p {
-    font-size: 8px;
-  }
-}
+    .birthday {
+      overflow: hidden;
+      position: fixed;
+    }
+
+    /* JUDUL */
+    .birthday .greeting {
+      position: absolute;
+      top: 13%;
+      left: 8%;
+      margin: 0 !important;
+      font-size: clamp(2rem, 5vw, 4.3rem);
+      z-index: 5;
+    }
+
+    .birthday .year {
+      display: none;
+    }
+
+    /* SPIDERMAN */
+    .spiderman {
+      position: absolute;
+      right: 2%;
+      bottom: 5%;
+      height: 65vh;
+      max-width: 40%;
+      object-fit: contain;
+      z-index: 3;
+    }
+
+    /* BALON PERCAKAPAN */
+    .spiderman-talk {
+      position: absolute;
+      top: 25%;
+      right: 24%;
+      width: 210px;
+      padding: 12px;
+      z-index: 6;
+      transform: rotate(-2deg);
+    }
+
+    .spiderman-talk p {
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    /* TOMBOL */
+    .birthday .buttons {
+      position: absolute;
+      top: 38%;
+      left: 8%;
+      margin: 0;
+      z-index: 10;
+    }
+
+    .birthday .btn {
+      font-size: 1.1rem;
+      padding: 12px 25px;
+    }
+
+    /* KARAKTER KARTUN */
+    .cartoon-friends {
+      position: absolute;
+      left: 7%;
+      bottom: 5%;
+      display: flex;
+      gap: 12px;
+      z-index: 8;
+    }
+
+    .friend img {
+      width: 85px;
+      height: 100px;
+      object-fit: contain;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .birthday .greeting {
+        top: 10%;
+        left: 5%;
+        font-size: 2rem;
+      }
+
+      .spiderman {
+        height: 43vh;
+        max-width: 65%;
+        right: -5%;
+        bottom: 15%;
+      }
+
+      .spiderman-talk {
+        top: 25%;
+        right: 5%;
+        width: 155px;
+        padding: 9px;
+      }
+
+      .spiderman-talk p {
+        font-size: 9px;
+      }
+
+      .birthday .buttons {
+        top: 45%;
+        left: 5%;
+      }
+
+      .birthday .btn {
+        font-size: .9rem;
+        padding: 9px 14px;
+      }
+
+      .cartoon-friends {
+        left: 5%;
+        bottom: 3%;
+        gap: 5px;
+      }
+
+      .friend img {
+        width: 58px;
+        height: 70px;
+      }
+
+      .friend span {
+        font-size: 7px;
+      }
+    }
+
+    /* RESPONSIVE LAPTOP, TABLET DAN HP */
+    @media (min-width: 901px) {
+      .birthday .greeting {
+        top: 12%;
+        left: 7%;
+        font-size: 4rem;
+      }
+
+      .birthday .buttons {
+        top: 38%;
+        left: 8%;
+      }
+
+      .spiderman {
+        height: 68vh;
+        right: 2%;
+      }
+
+      .spiderman-talk {
+        top: 24%;
+        right: 25%;
+        width: 220px;
+      }
+
+      .cartoon-friends {
+        left: 7%;
+        bottom: 3%;
+      }
+    }
+
+    /* TABLET */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .birthday .greeting {
+        top: 12%;
+        left: 5%;
+        font-size: 3rem;
+      }
+
+      .birthday .buttons {
+        top: 35%;
+        left: 5%;
+        gap: 10px;
+      }
+
+      .birthday .btn {
+        font-size: 1rem;
+        padding: 10px 18px;
+      }
+
+      .spiderman {
+        height: 58vh;
+        max-width: 48%;
+        right: 0;
+      }
+
+      .spiderman-talk {
+        top: 24%;
+        right: 23%;
+        width: 185px;
+        padding: 12px;
+      }
+
+      .cartoon-friends {
+        left: 4%;
+        bottom: 3%;
+        gap: 8px;
+      }
+
+      .friend img {
+        width: 70px;
+        height: 85px;
+      }
+    }
+
+    /* HP */
+    @media (max-width: 600px) {
+      .front .info {
+        font-size: 2rem;
+      }
+
+      .front .countdown {
+        font-size: 3rem;
+      }
+
+      .front .loader {
+        width: 190px;
+        margin-top: 45px;
+      }
+
+      .birthday {
+        padding: 10px;
+      }
+
+      .birthday .greeting {
+        position: absolute;
+        top: 9%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: clamp(1.7rem, 8vw, 2.5rem);
+        margin: 0 !important;
+      }
+
+      /* Spider-Man di bagian kanan bawah */
+      .spiderman {
+        position: absolute;
+        height: 40vh;
+        max-width: 65%;
+        right: -3%;
+        bottom: 16%;
+        opacity: 1;
+      }
+
+      /* Balon percakapan */
+      .spiderman-talk {
+        position: absolute;
+        top: 23%;
+        right: 4%;
+        width: 155px;
+        padding: 9px;
+        border-width: 3px;
+        border-radius: 15px;
+      }
+
+      .comic-title {
+        font-size: 13px;
+      }
+
+      .spiderman-talk p {
+        font-size: 9px;
+        line-height: 1.4;
+        margin: 6px 0;
+      }
+
+      .comic-boom {
+        font-size: 9px;
+        padding: 4px 8px;
+      }
+
+      /* Tombol di sebelah kiri */
+      .birthday .buttons {
+        position: absolute;
+        top: 39%;
+        left: 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        margin: 0;
+      }
+
+      .birthday .btn {
+        font-size: 0.95rem;
+        padding: 9px 18px;
+      }
+
+      /* SpongeBob, Upin, Ipin */
+      .cartoon-friends {
+        position: absolute;
+        left: 50%;
+        bottom: 2%;
+        transform: translateX(-50%);
+        width: 95%;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .friend img {
+        width: clamp(48px, 17vw, 68px);
+        height: clamp(60px, 20vw, 82px);
+      }
+
+      .friend span {
+        font-size: 7px;
+        padding: 3px 6px;
+      }
+
+      .web-decoration {
+        opacity: 0.10;
+      }
+    }
+
+    /* HP KECIL */
+    @media (max-width: 380px) {
+      .birthday .greeting {
+        font-size: 1.6rem;
+      }
+
+      .spiderman {
+        height: 35vh;
+        right: -5%;
+      }
+
+      .spiderman-talk {
+        width: 140px;
+        right: 3%;
+        top: 22%;
+      }
+
+      .birthday .buttons {
+        top: 40%;
+        left: 4%;
+      }
+
+      .birthday .btn {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+      }
+
+      .cartoon-friends {
+        gap: 4px;
+      }
+
+      .friend img {
+        width: 48px;
+        height: 60px;
+      }
+
+      .friend span {
+        font-size: 6px;
+      }
+    }
+
+    /* HP LANDSCAPE */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .birthday .greeting {
+        top: 5%;
+        left: 5%;
+        font-size: 2rem;
+      }
+
+      .spiderman {
+        height: 70vh;
+        right: 2%;
+      }
+
+      .spiderman-talk {
+        top: 20%;
+        right: 25%;
+        width: 170px;
+      }
+
+      .birthday .buttons {
+        top: 48%;
+        left: 5%;
+      }
+
+      .cartoon-friends {
+        bottom: 1%;
+        left: 5%;
+      }
+
+      .friend img {
+        width: 45px;
+        height: 50px;
+      }
+    }
+
+    /* FOTO POLAROID LEBIH KECIL DI HP */
+    @media (max-width: 700px) {
+      .memory-wall {
+        width: 100%;
+        max-width: 310px;
+        margin: 0 auto;
+        padding: 8px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        justify-items: center;
+      }
+
+      .polaroid {
+        width: 100%;
+        max-width: 135px;
+        padding: 5px 5px 8px;
+        margin: 0;
+      }
+
+      .polaroid img {
+        width: 100%;
+        height: 105px;
+        object-fit: cover;
+      }
+
+      .polaroid p {
+        font-size: 9px;
+        margin-top: 5px;
+      }
+    }
+
+    /* HP KECIL */
+    @media (max-width: 380px) {
+      .memory-wall {
+        max-width: 270px;
+        gap: 7px;
+      }
+
+      .polaroid {
+        max-width: 118px;
+      }
+
+      .polaroid img {
+        height: 90px;
+      }
+
+      .polaroid p {
+        font-size: 8px;
+      }
+    }
   </style>
 </head>
 
@@ -924,7 +923,7 @@
       <span class="comic-boom">LET'S GO!</span>
     </div>
 
-    <!-- SPONGEBOB, UPIN DAN IPIN -->
+    <!-- SPONGEBOB DAN UPIN -->
     <div class="cartoon-friends">
 
       <div class="friend">
@@ -935,17 +934,21 @@
         <img src="ip.png" alt="Upin" />
       </div>
 
-
-
     </div>
 
     <!-- TOMBOL -->
     <div class="buttons">
-      <button class="btn" onclick="location.href='Halaman1.html'">
+      <button
+        class="btn"
+        type="button"
+        onclick="window.location.href='halaman1.html'">
         Next
       </button>
 
-      <button class="btn" onclick="location.href='Flowers.html'">
+      <button
+        class="btn"
+        type="button"
+        onclick="window.location.href='flowers.html'">
         Surprise
       </button>
     </div>
@@ -969,8 +972,8 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
     integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
     crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  ></script>
+    referrerpolicy="no-referrer">
+  </script>
 
   <script>
     window.onload = () => {
@@ -1034,13 +1037,6 @@
       gsap.to(".front", {
         left: "-100%",
         duration: 1.2,
-        delay: 10.5,
-        ease: "power2.inOut"
-      });
-
-      gsap.to(".front-shadow", {
-        left: "-100%",
-        duration: 0.8,
         delay: 10.5,
         ease: "power2.inOut"
       });
